@@ -19,5 +19,33 @@ func main() {
 }
 ```
 
+### Example
+
+Given the following `input.md`:
+
+````markdown
+# Example
+
+Some text here.
+
+```mermaid
+graph TD
+    A[Start] --> B[End]
+```
+
+More text here.
+````
+
+Running `mmdump.Dump("input.md", "output.svg")` will:
+
+1. Extract the mermaid block and write it to `input.mmd`:
+
+```mermaid
+graph TD
+    A[Start] --> B[End]
+```
+
+2. Run `mmdc --input input.mmd --output output.svg` to generate `output.svg`.
+
 ## Links
 * [mermaidjs/mermaid.cli](https://github.com/mermaidjs/mermaid.cli)
